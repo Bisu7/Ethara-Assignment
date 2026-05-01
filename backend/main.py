@@ -35,7 +35,7 @@ app.add_middleware(
 def read_root():
     return {"message": "Project Manager API is running"}
 
-# --- AUTH & USERS ---
+# AUTH & USERS
 
 @app.post("/signup", response_model=schemas.UserOut)
 def signup(user: schemas.UserCreate, db: Session = Depends(get_db)):
@@ -81,7 +81,7 @@ def get_users(db: Session = Depends(get_db), current_user: models.User = Depends
     return users
 
 
-# --- PROJECTS ---
+#PROJECTS 
 
 @app.get("/projects", response_model=List[schemas.ProjectOut])
 def get_projects(db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_active_user)):
@@ -112,7 +112,7 @@ def delete_project(project_id: int, db: Session = Depends(get_db), current_user:
     return {"message": "Project deleted"}
 
 
-# --- TASKS ---
+# TASKS 
 
 @app.get("/projects/{project_id}/tasks", response_model=List[schemas.TaskOut])
 def get_tasks_for_project(project_id: int, db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_active_user)):
@@ -165,7 +165,7 @@ def delete_task(task_id: int, db: Session = Depends(get_db), current_user: model
     return {"message": "Task deleted"}
 
 
-# --- DASHBOARD ---
+# DASHBOARD
 
 @app.get("/dashboard/stats", response_model=schemas.DashboardStats)
 def get_dashboard_stats(db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_active_user)):
