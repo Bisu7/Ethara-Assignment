@@ -1,0 +1,19 @@
+name: ethara-app
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: ethara-db-instance
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ethara
+    ports:
+      - "5440:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
