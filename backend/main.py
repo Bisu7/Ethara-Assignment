@@ -14,7 +14,7 @@ import auth
 # Create database tables
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Project Manager API")
+app = FastAPI(title="Ethara Assignment API")
 
 # Configure CORS
 origins = [

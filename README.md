@@ -1,4 +1,4 @@
-# ProjectFlow - Project Management App
+# Ethara Assignment
 
 A comprehensive project management web application built with a modern React frontend and a fast, robust FastAPI backend. It includes authentication, project creation, kanban task boards, and a dashboard overview.
 
